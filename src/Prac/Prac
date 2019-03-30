@@ -1,0 +1,103 @@
+addToFavorites = game => {
+    // const newGame = {
+    //   title: game.title,
+    //   average_rating: game.average_rating,
+    //   cover_art: game.cover_art,
+    //   Developer: game.Developer,
+    //   ESRB_Rating: game.ESRB_Rating,
+    //   Synopsis: game.Synopsis,
+    //   Category: game.Category,
+    //   release_date: game.release_date
+    // };
+    // console.log(newGame);
+    // axios.post("/api/games", newGame).then(response => {
+    //   this.setState({
+    //     favorites: response.data
+    //   });
+    // });
+  };
+  https://steamcdn-a.akamaihd.net/steam/apps/617870/extras/GIF1.jpg?t=1545150582
+
+
+
+class Header extends Component{
+    constructor(){
+        super();
+        this.state = {
+            name: '',
+            lolol: '',
+            showButton: true
+        }
+    }
+
+    enterName = (e) => {
+        this.setState({
+            name: e.target.value
+        })
+    }
+
+    setName = () => {
+        this.setState({
+            lolol: this.state.name,
+            showButton: false,
+            showHello: true
+        })
+
+    }
+    
+
+    render(){
+      console.log(this.state)
+      return(
+          <div>
+              <header>
+                  <div className='headhead'>
+                  
+                      {/* <img src={logo}/> */}
+                      <h1>Gallery</h1>
+                          <div className='childchild'>
+                          
+                      {/* <h5>~ Bid on the best abstract art of the internet ~</h5> */}
+                          </div>
+                  
+                  <div>
+                      {this.state.showHello && <p>Afternoon {' '}{this.state.lolol}, hope you enjoy the pieces of are we have set up for you</p>}
+                      {
+                      this.state.showButton && 
+                      <div>
+                          <input placeholder='Enter Name'  onChange={this.enterName} />
+                          <button onClick={this.setName}>Submit Name</button> <br /> <br />
+                      </div>
+                      }
+                      </div>
+                  </div>
+              </header>
+          </div>
+      )
+  }
+}
+
+export default Header;
+
+},
+  gameDelete: (req, res) => {
+    let { id } = req.params;
+    let newGame = myGame.findIndex(game => game.id === parseInt(id));
+
+    if (index !== -1) {
+      myGame.splice(index, 1);
+      res.status(200).send(myGame);
+    } else {
+      res.status(404).send("YOU DONE MESSED UP FOOL");
+    }
+  }
+};
+ })
+    if (index !== -1) {
+      myGame.splice(index, 1);
+      res.status(200).send(myGame);
+    } else {
+      res.status(404).send("YOU DONE MESSED UP FOOL");
+    }
+  }
+};

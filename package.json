@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "main": "server/",
-  "proxy": "http://localhost:4000",
+  "proxy": "http://localhost:4072",
   "dependencies": {
-    "axios": "0.18.0",
+    "axios": "^0.18.0",
     "body-parser": "1.18.3",
     "express": "4.16.4",
     "react": "^16.8.6",
