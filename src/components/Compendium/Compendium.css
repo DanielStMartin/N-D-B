@@ -1,0 +1,31 @@
+.Compendium {
+  background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/11/Backgrounds-Free-Fantasy-Art-HD.jpg);
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: none;
+  background-size: cover;
+  font-family: fantasy;
+  font: oblique;
+  color: gold;
+  text-shadow: 1px 1px 5px black;
+}
+.Compendium > div > img{
+  justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  max-width: 20%;
+  max-height: 20%;
+  margin: 10px;
+}
+
+
+h1 {
+font-size: xx-large
+}
+span{
+    color: gold;
+    word-wrap: normal;
+    flex-wrap: wrap;
+  
+    
+}

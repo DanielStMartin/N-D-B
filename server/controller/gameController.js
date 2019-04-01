@@ -37,16 +37,24 @@ module.exports = {
   },
   updateGame: (req, res, next) => {
     let { id } = req.params;
-    let { title, Synopsis } = req.body;
-    let newGame = game.findIndex(game => {
-      return +id === game.id;
+    // console.log(typeof(game.results));
+    var newGame = game.results.findIndex(game => {
+      return +id == game.id; //
     });
+    console.log(newGame);
     if (newGame === -1) {
       res.status(404).send(`error`);
     } else {
-      myGame[newGame].title = title;
-      myGame[newGame].Synopsis = Synopsis;
-      res.send(game);
+      //console.log(game.results);
+      console.log(req.query.liked, " hi");
+      if (req.query.liked == "true") {
+        game["results"][newGame]["Liked"] = true;
+        game["results"][newGame]["Disliked"] = false;
+      } else {
+        game["results"][newGame]["Liked"] = false;
+        game["results"][newGame]["Disliked"] = true;
+      }
+      res.send(game.results);
     }
   },
   gameDelete: (req, res) => {
@@ -62,3 +70,15 @@ module.exports = {
     }
   }
 };
+// gameDeletes: (req, res) => {
+//   let { id } = req.params;
+//   let newGame = myGame.findIndex(game => {
+//     return +id === game.id;
+//   });
+//   if (newGame === -1) {
+//     res.status(404).send(`error`);
+//   } else {
+//     myGame.splice(newGame, 1);
+//     res.send(myGame);
+//   }
+// }

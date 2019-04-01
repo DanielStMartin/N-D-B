@@ -1,0 +1,15 @@
+.Header {
+  height: 100px;
+  width: 100%;
+  background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/11/Backgrounds-Free-Fantasy-Art-HD.jpg);
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: none;
+  background-size: cover;
+  font-family: fantasy;
+  font: oblique;
+  color: gold;
+  text-shadow: 1px 1px 5px black;
+
+  
+}

@@ -7,13 +7,15 @@ export default function UserFavorites(props) {
     return (
       <div key={game.id}>
         <img src={coverArtPath + game.cover_art} alt="" />
-        <h1>game.title</h1>
-        <button onClick={() => props.addToFavorites(game)}>
-          Add to Favorites
-        </button>
-        {/* <span>{game.Synopsis.substring(0, 150)}</span> */}
+        <h1>{game.title}</h1>
+        <button onDoubleClickCapture={() => props.gameDelete(game)}>x</button>
+
+        {/* <button
+              style={{ backgroundColor: game["Liked"] ? "Blue" : "white" }}
+              onClick={() => props.update(game, true)}
+            ></button> */}
       </div>
     );
   });
-  return <div className="Favorites-container ">{mappedFavorites}</div>;
+  return <div className="Favorites-container">{mappedFavorites}</div>;
 }

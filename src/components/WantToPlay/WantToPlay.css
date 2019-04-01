@@ -1,0 +1,21 @@
+.Want-To-Play {
+  background-image: url(https://1.bp.blogspot.com/-kiIDKt8c-WU/UuD1A0G8gPI/AAAAAAABESg/JDpGZhKD6Ho/s1600/Fantasy-Astronomy-wallpapers-10.jpg);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 10000px;
+  align-items: center;
+  color: gold
+}
+
+.Want-To-Play > div {
+  /* display: flex; */
+  justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  max-width: 150px;
+  margin: 10px;
+}
+.Want-To-Play > div > img {
+  width: 100%;
+}

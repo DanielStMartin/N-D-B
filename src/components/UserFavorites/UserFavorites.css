@@ -1,14 +1,15 @@
 .Favorites-container {
-  background-color: teal;
+  background-image: url(https://1.bp.blogspot.com/-kiIDKt8c-WU/UuD1A0G8gPI/AAAAAAABESg/JDpGZhKD6Ho/s1600/Fantasy-Astronomy-wallpapers-10.jpg);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 1000px;
+  max-width: 10000px;
   align-items: center;
+  color: gold
 }
 
 .Favorites-container > div {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   justify-content: flex-start;
   flex-direction: column;
