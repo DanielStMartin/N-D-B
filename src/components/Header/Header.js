@@ -1,15 +1,31 @@
 import React from "react";
+import { ScrollTo } from "react-scroll-to";
 import "./Header.css";
 
 export default function Header(props) {
-    let mappedHeader = props.Header.map(game => {
-      return (
+  return (
+    <header className="Header">
+      {/* <div>Welcome</div> */}
+
+      <div className="all">
         <div>
-           <input placeholder="Search Game"/>
-       <button>Submit</button>
+          <ScrollTo>
+            {({ scrollTo }) => (
+              <button onClick={() => props.scrollPage(20, 100000, scrollTo)}>
+                Bottom
+              </button>
+            )}
+          </ScrollTo>
         </div>
-      )})
-      return <div className="Header">{mappedHeader}</div>;
-    
-    }
-   
+        <div>
+          <input
+            className="Header-input"
+            type="text"
+            placeholder="Search Game"
+          />
+          <button>Submit</button>
+        </div>
+      </div>
+    </header>
+  );
+}

@@ -1,11 +1,18 @@
 const game = require("./data/data.json");
-let myGame = [];
+let favGame = [];
+let laterGame = [];
 let id = 0;
 module.exports = {
-  gaminSesh: (req, res, next) => {
+  favGamin: (req, res, next) => {
+    res.status(200).send(favGame);
+  },
+  laterGamin: (req, res, next) => {
+    res.status(200).send(laterGame);
+  },
+  allGamin: (req, res, next) => {
     res.status(200).send(game);
   },
-  userAddGame: (req, res) => {
+  userAddFav: (req, res) => {
     let {
       average_rating,
       title,
@@ -18,7 +25,7 @@ module.exports = {
       Disliked,
       release_date
     } = req.body;
-    let newGame = {
+    let newFavGame = {
       id,
       average_rating,
       title,
@@ -31,13 +38,42 @@ module.exports = {
       Disliked,
       release_date
     };
-    myGame.push(newGame);
+    favGame.push(newFavGame);
     id++;
-    res.status(200).send(myGame);
+    res.status(200).send(favGame);
+  },
+  userAddLater: (req, res) => {
+    let {
+      average_rating,
+      title,
+      cover_art,
+      Developer,
+      ESRB_Rating,
+      Synopsis,
+      Category,
+      Liked,
+      Disliked,
+      release_date
+    } = req.body;
+    let newLaterGame = {
+      id,
+      average_rating,
+      title,
+      cover_art,
+      Developer,
+      ESRB_Rating,
+      Synopsis,
+      Category,
+      Liked,
+      Disliked,
+      release_date
+    };
+    laterGame.push(newLaterGame);
+    id++;
+    res.status(200).send(laterGame);
   },
   updateGame: (req, res, next) => {
     let { id } = req.params;
-    // console.log(typeof(game.results));
     var newGame = game.results.findIndex(game => {
       return +id == game.id; //
     });
@@ -45,7 +81,6 @@ module.exports = {
     if (newGame === -1) {
       res.status(404).send(`error`);
     } else {
-      //console.log(game.results);
       console.log(req.query.liked, " hi");
       if (req.query.liked == "true") {
         game["results"][newGame]["Liked"] = true;
@@ -57,28 +92,29 @@ module.exports = {
       res.send(game.results);
     }
   },
-  gameDelete: (req, res) => {
+  laterDelete: (req, res) => {
     let { id } = req.params;
-    let newGame = myGame.findIndex(game => {
+    let newLaterGame = laterGame.findIndex(game => {
       return +id === game.id;
     });
-    if (newGame === -1) {
-      res.status(404).send(`error`);
+    if (newLaterGame === -1) {
+      res.status(500).send(`error`);
     } else {
-      myGame.splice(newGame, 1);
-      res.send(myGame);
+      laterGame.splice(newLaterGame, 1);
+      res.send(laterGame);
+    }
+  },
+
+  favDelete: (req, res) => {
+    let { id } = req.params;
+    let newFavGame = favGame.findIndex(game => {
+      return +id === game.id;
+    });
+    if (newFavGame === -1) {
+      res.status(500).send(`error`);
+    } else {
+      favGame.splice(newFavGame, 1);
+      res.send(favGame);
     }
   }
 };
-// gameDeletes: (req, res) => {
-//   let { id } = req.params;
-//   let newGame = myGame.findIndex(game => {
-//     return +id === game.id;
-//   });
-//   if (newGame === -1) {
-//     res.status(404).send(`error`);
-//   } else {
-//     myGame.splice(newGame, 1);
-//     res.send(myGame);
-//   }
-// }

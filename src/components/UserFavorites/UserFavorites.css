@@ -1,13 +1,16 @@
 .Favorites-container {
-  background-image: url(https://1.bp.blogspot.com/-kiIDKt8c-WU/UuD1A0G8gPI/AAAAAAABESg/JDpGZhKD6Ho/s1600/Fantasy-Astronomy-wallpapers-10.jpg);
+  background-image: url(https://wallup.net/wp-content/uploads/2016/01/52514-artwork-fantasy_art-concept_art-mountain-floating-planet-space.jpg);
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: none;
+  background-size: cover;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 10000px;
   align-items: center;
-  color: gold
+  color: gold;
 }
-
 .Favorites-container > div {
   /* display: flex; */
   justify-content: center;

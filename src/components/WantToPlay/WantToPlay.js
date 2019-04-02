@@ -8,9 +8,9 @@ export default function WantToPlay(props) {
       <div key={game.id}>
         <img src={coverArtPath + game.cover_art} alt="" />
         <h1>{game.title}</h1>
-        <button onClick={() => props.gameDelete(game)}>o</button>
+        <button onClick={() => props.laterDelete(game)}>o</button>
       </div>
     );
   });
-  return <div className="Want-To-Play">{mappedWantToPlay}</div>;
+  return <div className="WantToPlay">{mappedWantToPlay}</div>;
 }

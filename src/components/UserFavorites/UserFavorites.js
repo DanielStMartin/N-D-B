@@ -8,12 +8,7 @@ export default function UserFavorites(props) {
       <div key={game.id}>
         <img src={coverArtPath + game.cover_art} alt="" />
         <h1>{game.title}</h1>
-        <button onDoubleClickCapture={() => props.gameDelete(game)}>x</button>
-
-        {/* <button
-              style={{ backgroundColor: game["Liked"] ? "Blue" : "white" }}
-              onClick={() => props.update(game, true)}
-            ></button> */}
+        <button onDoubleClickCapture={() => props.favDelete(game)}>x</button>
       </div>
     );
   });

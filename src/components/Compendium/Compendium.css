@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 .Compendium {
   background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/11/Backgrounds-Free-Fantasy-Art-HD.jpg);
   background-attachment: fixed;
@@ -5,27 +9,41 @@
   background-repeat: none;
   background-size: cover;
   font-family: fantasy;
-  font: oblique;
-  color: gold;
-  text-shadow: 1px 1px 5px black;
 }
-.Compendium > div > img{
+/* .Compendium > div > img {
   justify-content: center;
   justify-content: flex-start;
   flex-direction: column;
   max-width: 20%;
   max-height: 20%;
   margin: 10px;
-}
-
+} */
 
 h1 {
-font-size: xx-large
+  font-size: xx-large;
+  color: gold;
+  text-shadow: 5px 5px 5px black;
+  /* border: 30px; */
+  margin: 10px;
+  /* padding:10px; */
 }
-span{
-    color: gold;
-    word-wrap: normal;
-    flex-wrap: wrap;
-  
-    
+h3 {
+  font-size: x-large;
+  color: gold;
+  margin: 5px;
+  text-shadow: 5px 5px 5px black;
+}
+span {
+  color: gold;
+  word-wrap: normal;
+  flex-wrap: wrap;
+  border: 10px black;
+  margin: 10px;
+  padding: 0;
+  font-weight: bolder;
+  font-size: x-large;
+  text-shadow: 5px 5px 5px black;
+}
+button.className.Favs {
+  background-image: url(https://1bp.blogspot.com/-HtWNqqWQi9M/WfQqZYHljlI/AAAAAAAAKVk/bFCiGAKocBUAro14E08seT8PdPPT_tyvACK4BGAYYCw/s1600/social-2706548_1920.png);
 }
